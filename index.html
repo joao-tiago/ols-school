@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLS – Obrigado Language School | Portuguese for Expats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lime: #C5E86C;
+            --dark: #1A3622;
+            --offwhite: #FBFBF9;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--offwhite); color: var(--dark); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
+        
+        .nav-btn { background: var(--lime); color: var(--dark); padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 232, 108, 0.4); }
+
+        /* Hero */
+        .hero { display: flex; align-items: center; padding: 80px 5%; gap: 50px; min-height: 85vh; }
+        .hero-text { flex: 1; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; color: #444; }
+        
+        .hero-img { flex: 1; background: #eee; height: 450px; border-radius: 40px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .hero-img::before { content: ""; position: absolute; width: 100%; height: 100%; border: 2px solid var(--lime); top: 15px; left: 15px; border-radius: 40px; z-index: -1; }
+
+        /* Value Props */
+        .features { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 40px; border-radius: 30px; box-shadow: var(--shadow); transition: 0.3s; text-align: center; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card i { font-size: 2rem; margin-bottom: 20px; display: block; }
+
+        /* Contact Section */
+        .contact { background: var(--dark); color: white; padding: 100px 5%; text-align: center; }
+        .contact h2 { font-size: 2.5rem; margin-bottom: 40px; }
+        .contact-form { max-width: 500px; margin: 0 auto; background: white; padding: 40px; border-radius: 30px; display: grid; gap: 15px; }
+        input, select { padding: 15px; border-radius: 12px; border: 1px solid #ddd; width: 100%; }
+        .submit-btn { background: var(--lime); color: var(--dark); border: none; padding: 18px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-img { width: 100%; height: 300px; }
+            .sticky-bottom { position: fixed; bottom: 0; width: 100%; padding: 15px; background: white; display: flex; justify-content: center; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">OLS 👋</div>
+        <a href="#contact" class="nav-btn">Book a Class</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Learn Portuguese in Portugal — <span style="color: #88B01C;">the Fun Way.</span></h1>
+            <p>Practical, real-life Portuguese for expats. Learn with friendly teachers who make integration easy and enjoyable.</p>
+            <a href="#contact" class="nav-btn" style="padding: 18px 40px; font-size: 1.1rem;">Start Speaking Today</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Students learning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 40px;">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>🗣️ Speak Confidently</h3>
+            <p>No boring drills. We focus on conversations you'll actually have at the market or with neighbors.</p>
+        </div>
+        <div class="feature-card">
+            <h3>💡 Expat Focused</h3>
+            <p>Designed specifically for those living in Portugal to help you integrate faster.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏠 Hybrid Learning</h3>
+            <p>Choose between online flexibility or immersive in-person classes in Lisbon.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Ready to start?</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <select>
+                <option>Level: Total Beginner</option>
+                <option>Level: Intermediate</option>
+                <option>Level: Advanced</option>
+            </select>
+            <button class="submit-btn">SEND REQUEST</button>
+        </div>
+    </section>
+
+    <div class="sticky-bottom" id="mobile-cta" style="display: none;">
+        <a href="#contact" class="nav-btn">Book Your Class</a>
+    </div>
+
+    <script>
+        // Simple logic to show mobile sticky button
+        if (window.innerWidth < 768) {
+            document.getElementById('mobile-cta').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
